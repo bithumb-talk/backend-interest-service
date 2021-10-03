@@ -23,7 +23,7 @@ public class InterestServiceImpl implements InterestService{
 
     @Override
     public List<InterestResponse> getInterests(long userId) {
-        return InterestResponse.ofArray(interestRepository.findByUserId(userId).collectList().block(),userId);
+        return InterestResponse.ofArray(interestRepository.findByUserId(userId),userId);
     }
     @Override
     public InterestResponse createInterest(long userId, String symbol) throws IOException {
@@ -38,7 +38,7 @@ public class InterestServiceImpl implements InterestService{
                 .korean(coin.getKorean())
                 .market(coin.getMarket())
                 .symbol(symbol).build();
-        return InterestResponse.of(interestRepository.save(interest).block(),userId);
+        return InterestResponse.of(interestRepository.save(interest),userId);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class InterestServiceImpl implements InterestService{
         if (!existsDB(symbol,userId)){
             throw new SecurityException(ErrorCode.INTEREST_NOT_EXISTS.getMessage());
         };
-        interestRepository.deleteInterestBySymbolAndUserId(symbol,userId).block();
+        interestRepository.deleteInterestBySymbolAndUserId(symbol,userId);
     }
 
 
@@ -59,7 +59,7 @@ public class InterestServiceImpl implements InterestService{
     }
 
     private Boolean existsDB(String symbol, long userId) {
-        Boolean existsDB = interestRepository.existsInterestBySymbolAndUserId(symbol,userId).block().booleanValue();
+        Boolean existsDB = interestRepository.existsInterestBySymbolAndUserId(symbol,userId).booleanValue();
         if (existsDB) {
             return Boolean.TRUE;
         }

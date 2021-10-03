@@ -1,9 +1,25 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb://mongo:27017/test
+#  data:
+#    mongodb:
+#      uri: mongodb://mongo:27017/test
   application:
     name: interest
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    #url: jdbc:mariadb://localhost:5001/bithumb
+    url: jdbc:mariadb://youngcha-interest.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
+    username: admin
+    password: youngcha1008
+    sql-script-encoding: UTF-8
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    #    generate-ddl: true
+    #    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
 eureka:
   client:
     register-with-eureka: true

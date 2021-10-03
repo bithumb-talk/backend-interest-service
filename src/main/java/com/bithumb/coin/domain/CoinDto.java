@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @RequiredArgsConstructor

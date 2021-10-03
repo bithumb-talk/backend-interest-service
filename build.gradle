@@ -19,17 +19,24 @@ repositories {
 }
 
 dependencies {
+	//jpa
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.5.4'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
+
 	//유레카
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '3.0.4'
-
 	implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.6.RELEASE'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb-reactive'
-	implementation group: 'org.mongodb', name: 'mongodb-driver-sync'
-	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+
+	//mongdb
+//	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb-reactive'
+//	implementation group: 'org.mongodb', name: 'mongodb-driver-sync'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

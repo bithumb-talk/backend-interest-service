@@ -1,24 +1,37 @@
 package com.bithumb.interest.domain;
 
 import lombok.*;
-import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
-import java.util.List;
+import javax.persistence.*;
 
+
+@Entity
 @Getter
-@RequiredArgsConstructor
-@EqualsAndHashCode @ToString
-@AllArgsConstructor @Builder
-@Document(collection = "interests")
+@NoArgsConstructor
+@Table(name="interest")
 public class Interest {
     @Id
-    private ObjectId id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="interest_no")
+    private long interest_id;
+
+    @Column(name="interest_symbol")
     private String symbol;
+
+    @Column(name="interest_korean")
     private String korean;
+
+    @Column(name="interest_market")
     private String market;
+
+    @Column(name="interest_userId")
     private long userId;
 
+    @Builder
+    public Interest(String symbol, String korean, String market, long userId ){
+        this.symbol = symbol;
+        this.korean = korean;
+        this.market = market;
+        this.userId = userId;
+    }
 }
