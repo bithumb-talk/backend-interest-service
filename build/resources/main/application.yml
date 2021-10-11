@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: INTEREST
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://youngcha-interest.crtppt0lvgk7.ap-northeast-2.rds.amazonaws.com:3306/bithumb
+    username: admin
+    password: youngcha1008
+    sql-script-encoding: UTF-8
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://3.38.23.41:8761/eureka
+  instance:
+    prefer-ip-address: true
+cloud:
+  aws:
+    credentials:
+      accessKey: AKIA2SJCWGIOHZXVYN5I
+      secretKey: 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
+    s3:
+      bucket: youngcha-coin-service
+      key: coinlist/coin-list.json
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+server:
+  port: 5000
+logging:
+  level:
+    root: info
+  file:
+    path: "/home/ubuntu/logging/interest"

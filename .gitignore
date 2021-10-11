@@ -4,7 +4,7 @@ data/db/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-.build
+.build/jacoco
 
 ### STS ###
 .apt_generated
