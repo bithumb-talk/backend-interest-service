@@ -1,0 +1,158 @@
+2021-10-11T22:48:43.923+0900  INFO 64320 --- [  restartedMain] com.bithumb.InterestApplication          [  55] : Starting InterestApplication using Java 11.0.12 on jonghyeokui-MacBookAir.local with PID 64320 (/Users/jonghyeokjeon/bithumb/youngcha/backend-interest-service/out/production/classes started by jonghyeokjeon in /Users/jonghyeokjeon/bithumb/youngcha/backend-interest-service)
+2021-10-11T22:48:43.926+0900  INFO 64320 --- [  restartedMain] com.bithumb.InterestApplication          [ 663] : The following profiles are active: dev
+2021-10-11T22:48:43.969+0900  INFO 64320 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-11T22:48:43.970+0900  INFO 64320 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor [ 255] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-11T22:48:45.246+0900  INFO 64320 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 132] : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-11T22:48:45.314+0900  INFO 64320 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate [ 201] : Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interfaces.
+2021-10-11T22:48:45.645+0900  WARN 64320 --- [  restartedMain] i.InstanceMetadataServiceResourceFetcher [ 105] : Fail to retrieve token 
+
+com.amazonaws.SdkClientException: Failed to connect to service endpoint: 
+	at com.amazonaws.internal.EC2ResourceFetcher.doReadResource(EC2ResourceFetcher.java:100)
+	at com.amazonaws.internal.InstanceMetadataServiceResourceFetcher.getToken(InstanceMetadataServiceResourceFetcher.java:91)
+	at com.amazonaws.internal.InstanceMetadataServiceResourceFetcher.readResource(InstanceMetadataServiceResourceFetcher.java:69)
+	at com.amazonaws.internal.EC2ResourceFetcher.readResource(EC2ResourceFetcher.java:66)
+	at com.amazonaws.util.EC2MetadataUtils.getItems(EC2MetadataUtils.java:402)
+	at com.amazonaws.util.EC2MetadataUtils.getData(EC2MetadataUtils.java:371)
+	at org.springframework.cloud.aws.context.support.env.AwsCloudEnvironmentCheckUtils.isRunningOnCloudEnvironment(AwsCloudEnvironmentCheckUtils.java:38)
+	at org.springframework.cloud.aws.context.annotation.OnAwsCloudEnvironmentCondition.matches(OnAwsCloudEnvironmentCondition.java:38)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.bithumb.InterestApplication.main(InterestApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: No route to host (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1232)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at com.amazonaws.internal.ConnectionUtils.connectToEndpoint(ConnectionUtils.java:52)
+	at com.amazonaws.internal.EC2ResourceFetcher.doReadResource(EC2ResourceFetcher.java:80)
+	... 29 common frames omitted
+
+2021-10-11T22:48:45.651+0900  WARN 64320 --- [  restartedMain] com.amazonaws.util.EC2MetadataUtils      [ 409] : Unable to retrieve the requested metadata (/latest/meta-data/instance-id). Failed to connect to service endpoint: 
+
+com.amazonaws.SdkClientException: Failed to connect to service endpoint: 
+	at com.amazonaws.internal.EC2ResourceFetcher.doReadResource(EC2ResourceFetcher.java:100)
+	at com.amazonaws.internal.InstanceMetadataServiceResourceFetcher.getToken(InstanceMetadataServiceResourceFetcher.java:91)
+	at com.amazonaws.internal.InstanceMetadataServiceResourceFetcher.readResource(InstanceMetadataServiceResourceFetcher.java:69)
+	at com.amazonaws.internal.EC2ResourceFetcher.readResource(EC2ResourceFetcher.java:66)
+	at com.amazonaws.util.EC2MetadataUtils.getItems(EC2MetadataUtils.java:402)
+	at com.amazonaws.util.EC2MetadataUtils.getData(EC2MetadataUtils.java:371)
+	at org.springframework.cloud.aws.context.support.env.AwsCloudEnvironmentCheckUtils.isRunningOnCloudEnvironment(AwsCloudEnvironmentCheckUtils.java:38)
+	at org.springframework.cloud.aws.context.annotation.OnAwsCloudEnvironmentCondition.matches(OnAwsCloudEnvironmentCondition.java:38)
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader$TrackedConditionEvaluator.shouldSkip(ConfigurationClassBeanDefinitionReader.java:489)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:140)
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.bithumb.InterestApplication.main(InterestApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.ConnectException: No route to host (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:177)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1232)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at com.amazonaws.internal.ConnectionUtils.connectToEndpoint(ConnectionUtils.java:52)
+	at com.amazonaws.internal.EC2ResourceFetcher.doReadResource(EC2ResourceFetcher.java:80)
+	... 29 common frames omitted
+
+2021-10-11T22:48:45.989+0900  INFO 64320 --- [  restartedMain] o.s.cloud.context.scope.GenericScope     [ 283] : BeanFactory id=f2aad843-f0ae-3291-a0d7-eae5684eaeaf
+2021-10-11T22:48:46.853+0900  INFO 64320 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 108] : Tomcat initialized with port(s): 5000 (http)
+2021-10-11T22:48:46.861+0900  INFO 64320 --- [  restartedMain] o.apache.catalina.core.StandardService   [ 173] : Starting service [Tomcat]
+2021-10-11T22:48:46.862+0900  INFO 64320 --- [  restartedMain] org.apache.catalina.core.StandardEngine  [ 173] : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-10-11T22:48:46.963+0900  INFO 64320 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring embedded WebApplicationContext
+2021-10-11T22:48:46.966+0900  INFO 64320 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext [ 290] : Root WebApplicationContext: initialization completed in 2995 ms
+2021-10-11T22:48:47.325+0900  INFO 64320 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  [  31] : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-10-11T22:48:47.445+0900  INFO 64320 --- [  restartedMain] org.hibernate.Version                    [  44] : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-10-11T22:48:47.541+0900  INFO 64320 --- [  restartedMain] o.hibernate.annotations.common.Version   [  56] : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-10-11T22:48:47.627+0900  INFO 64320 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 110] : HikariPool-1 - Starting...
+2021-10-11T22:48:47.757+0900  INFO 64320 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       [ 123] : HikariPool-1 - Start completed.
+2021-10-11T22:48:47.772+0900  INFO 64320 --- [  restartedMain] org.hibernate.dialect.Dialect            [ 175] : HHH000400: Using dialect: org.hibernate.dialect.MariaDBDialect
+2021-10-11T22:48:48.161+0900  INFO 64320 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       [  52] : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-10-11T22:48:48.168+0900  INFO 64320 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean [ 437] : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-10-11T22:48:49.039+0900  WARN 64320 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration [ 219] : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-10-11T22:48:49.874+0900  INFO 64320 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       [  58] : LiveReload server is running on port 35729
+2021-10-11T22:48:50.832+0900  INFO 64320 --- [  restartedMain] DiscoveryClientOptionalArgsConfiguration [  68] : Eureka HTTP Client uses RestTemplate.
+2021-10-11T22:48:50.926+0900  WARN 64320 --- [  restartedMain] iguration$LoadBalancerCaffeineWarnLogger [  82] : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-10-11T22:48:51.137+0900  INFO 64320 --- [  restartedMain] o.s.c.n.eureka.InstanceInfoFactory       [  67] : Setting initial instance status as: STARTING
+2021-10-11T22:48:51.160+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [ 372] : Initializing Eureka in region us-east-1
+2021-10-11T22:48:51.164+0900  INFO 64320 --- [  restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T22:48:51.180+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1007] : Disable delta property : false
+2021-10-11T22:48:51.182+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1008] : Single vip registry refresh property : null
+2021-10-11T22:48:51.182+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1009] : Force full registry fetch : false
+2021-10-11T22:48:51.182+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1010] : Application is null : false
+2021-10-11T22:48:51.182+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1011] : Registered Applications size is zero : true
+2021-10-11T22:48:51.182+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1013] : Application version is -1: true
+2021-10-11T22:48:51.183+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1097] : Getting all instance registry info from the eureka server
+2021-10-11T22:48:51.363+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1106] : The response status is 200
+2021-10-11T22:48:51.366+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1321] : Starting heartbeat executor: renew interval is: 30
+2021-10-11T22:48:51.371+0900  INFO 64320 --- [  restartedMain] c.n.discovery.InstanceInfoReplicator     [  60] : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-10-11T22:48:51.376+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [ 492] : Discovery Client initialized at timestamp 1633960131375 with initial instances count: 10
+2021-10-11T22:48:51.382+0900  INFO 64320 --- [  restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        [  41] : Registering application INTEREST with eureka with status UP
+2021-10-11T22:48:51.383+0900  INFO 64320 --- [  restartedMain] com.netflix.discovery.DiscoveryClient    [1352] : Saw local status change event StatusChangeEvent [timestamp=1633960131383, current=UP, previous=STARTING]
+2021-10-11T22:48:51.385+0900  INFO 64320 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    [ 873] : DiscoveryClient_INTEREST/172.30.1.35:INTEREST:5000: registering service...
+2021-10-11T22:48:51.422+0900  INFO 64320 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  [ 220] : Tomcat started on port(s): 5000 (http) with context path ''
+2021-10-11T22:48:51.424+0900  INFO 64320 --- [  restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration [ 144] : Updating port to 5000
+2021-10-11T22:48:51.456+0900  INFO 64320 --- [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    [ 882] : DiscoveryClient_INTEREST/172.30.1.35:INTEREST:5000 - registration status: 204
+2021-10-11T22:48:51.904+0900  INFO 64320 --- [  restartedMain] com.bithumb.InterestApplication          [  61] : Started InterestApplication in 8.603 seconds (JVM running for 14.69)
+2021-10-11T22:49:09.661+0900  INFO 64320 --- [nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       [ 173] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-11T22:49:09.663+0900  INFO 64320 --- [nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        [ 525] : Initializing Servlet 'dispatcherServlet'
+2021-10-11T22:49:09.669+0900  INFO 64320 --- [nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        [ 547] : Completed initialization in 6 ms
+2021-10-11T22:49:13.291+0900  INFO 64320 --- [nio-5000-exec-7] c.b.interest.api.InterestController      [  33] : 1.의 관심코인 리스트 
+2021-10-11T22:53:51.195+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T22:58:51.229+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:03:51.273+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
