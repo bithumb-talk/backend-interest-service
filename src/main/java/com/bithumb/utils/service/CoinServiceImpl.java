@@ -31,7 +31,6 @@ public class CoinServiceImpl implements CoinService {
 
     public HashMap<String, Coin> getCoins() throws IOException {
 
-
         ObjectMapper objectMapper = new ObjectMapper();
 
         AmazonS3 s3 = AmazonS3ClientBuilder.standard()

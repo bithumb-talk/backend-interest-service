@@ -37,8 +37,6 @@ class InterestServiceImplTest {
             .build();
     final List<Interest> interests = Arrays.asList(interest);
 
-    final InterestResponse interestResponse = InterestResponse.of(interest, 1);
-
     @BeforeEach
     void setUp() {
         this.interestService = new InterestServiceImpl(interestRepository, coinService);
