@@ -158,3 +158,12 @@ Caused by: java.net.ConnectException: No route to host (connect failed)
 2021-10-11T23:03:51.273+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
 2021-10-11T23:08:51.284+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
 2021-10-11T23:13:51.301+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:18:51.313+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:23:51.330+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:28:51.349+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:33:51.377+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:38:51.405+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:43:51.430+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:48:51.466+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:53:51.515+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration
+2021-10-11T23:58:51.539+0900  INFO 64320 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      [  43] : Resolving eureka endpoints via configuration

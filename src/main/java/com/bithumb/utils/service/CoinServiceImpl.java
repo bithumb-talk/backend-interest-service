@@ -34,7 +34,6 @@ public class CoinServiceImpl implements CoinService {
         ObjectMapper objectMapper = new ObjectMapper();
 
         AmazonS3 s3 = AmazonS3ClientBuilder.standard()
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(ACCESS_KEY,SECRET_KEY)))
                 .withRegion(Regions.AP_NORTHEAST_2)
                 .build();
         S3Object o = s3.getObject(BUCKET_NAME,KEY_NAME);
