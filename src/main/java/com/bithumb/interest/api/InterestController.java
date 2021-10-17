@@ -8,6 +8,9 @@ import com.bithumb.interest.api.dto.InterestResponse;
 import com.bithumb.interest.application.InterestServiceImpl;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,11 +24,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @Api
+@Slf4j
 public class InterestController {
     private final InterestServiceImpl interestService;
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(InterestController.class);
     @GetMapping("/interests/{user-id}")
     public ResponseEntity<?> getInterests(@PathVariable(value = "user-id") long userId){
+        LOGGER.info("{}.의 관심코인 리스트 ",userId);
         List<InterestResponse> interests = interestService.getInterests(userId);
         ApiResponse apiResponse = ApiResponse.responseData(StatusCode.SUCCESS,
                 SuccessCode.INTEREST_FINDALL_SUCCESS.getMessage(),interests);
